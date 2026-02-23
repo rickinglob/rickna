@@ -359,7 +359,7 @@ def main():
     "PAGEIND.NS",
     "PAYTM.NS",
     "PIRAMALFIN.NS",
-    "PPLPHARMA.NS',
+    "PPLPHARMA.NS",
     "PERSISTENT.NS",
     "PFC.NS",
     "PIDILITIND.NS",
@@ -473,4 +473,5 @@ if __name__ == "__main__":
         logger.info("Shutting down OTT Alert Server")
     except Exception as e:
         logger.error(f"Fatal error: {str(e)}")
+
 
