@@ -1,0 +1,5 @@
+2026-02-23 08:46:08,840 - INFO - Starting OTT Alert Server
+2026-02-23 08:46:08,932 - INFO - Starting new scan at 2026-02-23 14:16:08
+2026-02-23 08:47:00,359 - INFO - SELL Signal — SBICARD.NS at ₹781.45
+2026-02-23 08:47:13,126 - INFO - Compiled email sent: 0 BUY, 1 SELL signals.
+2026-02-23 08:47:13,127 - INFO - Scan completed. Found 1 signal(s). Sleeping 900s...
