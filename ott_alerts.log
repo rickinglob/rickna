@@ -638,3 +638,13 @@
 2026-02-23 07:10:05,667 - INFO - Compiled email sent: 1 BUY, 1 SELL signals.
 2026-02-23 07:10:05,667 - INFO - Scan completed. Found 2 signal(s). Sleeping 900s...
 2026-02-23 07:14:09,556 - INFO - Starting new scan at 2026-02-23 12:44:09
+2026-02-23 07:14:54,262 - INFO - SELL Signal — OIL.NS at ₹469.45
+2026-02-23 07:14:55,559 - INFO - BUY Signal — PAGEIND.NS at ₹33210.00
+2026-02-23 07:14:57,183 - ERROR - $PEL.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+2026-02-23 07:14:57,184 - WARNING - No data found for symbol: PEL.NS
+2026-02-23 07:14:57,184 - WARNING - Unable to fetch data for PEL.NS
+2026-02-23 07:15:08,380 - ERROR - $TATAMOTORS.NS: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+2026-02-23 07:15:08,381 - WARNING - No data found for symbol: TATAMOTORS.NS
+2026-02-23 07:15:08,381 - WARNING - Unable to fetch data for TATAMOTORS.NS
+2026-02-23 07:15:17,942 - INFO - Compiled email sent: 1 BUY, 1 SELL signals.
+2026-02-23 07:15:17,942 - INFO - Scan completed. Found 2 signal(s). Sleeping 900s...
