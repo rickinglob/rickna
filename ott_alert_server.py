@@ -358,7 +358,8 @@ def main():
     "ONGC.NS",
     "PAGEIND.NS",
     "PAYTM.NS",
-    "PEL.NS",
+    "PIRAMALFIN.NS",
+    "PPLPHARMA.NS',
     "PERSISTENT.NS",
     "PFC.NS",
     "PIDILITIND.NS",
@@ -371,7 +372,8 @@ def main():
     "SUNPHARMA.NS",
     "SUPREMEIND.NS",
     "TATACONSUM.NS",
-    "TATAMOTORS.NS",
+    "TMCV.NS",
+    "TMPV.NS",
     "TATAPOWER.NS",
     "TCS.NS",
     "TITAN.NS",
@@ -471,3 +473,4 @@ if __name__ == "__main__":
         logger.info("Shutting down OTT Alert Server")
     except Exception as e:
         logger.error(f"Fatal error: {str(e)}")
+
