@@ -38,6 +38,16 @@ def is_market_open(now=None):
     market_close = now.replace(hour=15, minute=30, second=0, microsecond=0)
     return market_open <= now <= market_close
 
+def load_watchlist(filepath="watchlist.csv"):
+    try:
+        df = pd.read_csv(filepath)
+        symbols = df["symbol"].dropna().tolist()
+        logger.info(f"Loaded {len(symbols)} symbols from watchlist")
+        return symbols
+    except Exception as e:
+        logger.error(f"Failed to load watchlist: {str(e)}")
+        return []
+
 
 def get_stock_data(symbol: str, period: str = "5d", interval: str = "30m") -> Optional[pd.DataFrame]:
     """Fetch stock data from Yahoo Finance with error handling"""
@@ -285,105 +295,7 @@ def add_alert_to_history(symbol: str, signal_type: str, price: float):
 
 def main():
     """Main monitoring loop"""
-    watchlist =[
-    "^NSEI",
-    "^BSESN",
-    "^NSEBANK",
-    "AARTIIND.NS",
-    "ABB.NS",
-    "ADANIENT.NS",
-    "ADANIPORTS.NS",
-    "APOLLOHOSP.NS",
-    "ASHOKLEY.NS",
-    "ASTRAL.NS",
-    "AUROPHARMA.NS",
-    "AXISBANK.NS",
-    "BAJFINANCE.NS",
-    "BALKRISIND.NS",
-    "BDL.NS",
-    "BEL.NS",
-    "BHARATFORG.NS",
-    "BHARTIARTL.NS",
-    "BSE.NS",
-    "CAMS.NS",
-    "CDSL.NS",
-    "CIPLA.NS",
-    "COALINDIA.NS",
-    "COFORGE.NS",
-    "COLPAL.NS",
-    "CUMMINSIND.NS",
-    "DIVISLAB.NS",
-    "DIXON.NS",
-    "DLF.NS",
-    "DMART.NS",
-    "DRREDDY.NS",
-    "EICHERMOT.NS",
-    "FORTIS.NS",
-    "GODREJCP.NS",
-    "GODREJPROP.NS",
-    "GRASIM.NS",
-    "HAL.NS",
-    "HAVELLS.NS",
-    "HCLTECH.NS",
-    "HDFCBANK.NS",
-    "HEROMOTOCO.NS",
-    "HINDUNILVR.NS",
-    "ICICIBANK.NS",
-    "IEX.NS",
-    "INDIGO.NS",
-    "INFY.NS",
-    "IOC.NS",
-    "IRCTC.NS",
-    "ITC.NS",
-    "JINDALSTEL.NS",
-    "JIOFIN.NS",
-    "JSL.NS",
-    "JUBLFOOD.NS",
-    "KOTAKBANK.NS",
-    "LAURUSLABS.NS",
-    "LODHA.NS",
-    "LT.NS",
-    "M&M.NS",
-    "MARICO.NS",
-    "MARUTI.NS",
-    "MAZDOCK.NS",
-    "MCX.NS",
-    "MGL.NS",
-    "MOTHERSON.NS",
-    "MPHASIS.NS",
-    "NAUKRI.NS",
-    "OBEROIRLTY.NS",
-    "OFSS.NS",
-    "OIL.NS",
-    "ONGC.NS",
-    "PAGEIND.NS",
-    "PAYTM.NS",
-    "PIRAMALFIN.NS",
-    "PPLPHARMA.NS",
-    "PERSISTENT.NS",
-    "PFC.NS",
-    "PIDILITIND.NS",
-    "PIIND.NS",
-    "PNBHOUSING.NS",
-    "POLYCAB.NS",
-    "POONAWALLA.NS",
-    "SBICARD.NS",
-    "SBIN.NS",
-    "SUNPHARMA.NS",
-    "SUPREMEIND.NS",
-    "TATACONSUM.NS",
-    "TMCV.NS",
-    "TMPV.NS",
-    "TATAPOWER.NS",
-    "TCS.NS",
-    "TITAN.NS",
-    "TRENT.NS",
-    "TVSMOTOR.NS",
-    "VBL.NS",
-    "VEDL.NS",
-    "VOLTAS.NS",
-    "WIPRO.NS",
-]
+    watchlist = load_watchlist()
 
     email_settings = {
         "smtp_server": "smtp.gmail.com",
@@ -473,5 +385,6 @@ if __name__ == "__main__":
         logger.info("Shutting down OTT Alert Server")
     except Exception as e:
         logger.error(f"Fatal error: {str(e)}")
+
 
 
